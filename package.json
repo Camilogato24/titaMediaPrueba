@@ -1,0 +1,18 @@
+{
+    "name": "pruebatitamedia",
+    "version": "1.0.0",
+    "description": "Prueba en Js",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "gulp"
+    },
+    "author": "Camilo Correa Fernández",
+    "license": "ISC",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "browser-sync": "^2.26.13",
+        "gulp-cli": "^2.3.0",
+        "gulp-sass": "^4.1.0"
+    }
+}

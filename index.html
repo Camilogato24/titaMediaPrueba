@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./src/img/logo.png" alt="Logo">
+            </div>
+            <div id="menu" class="menu-list">
+                <!-- menu vía fetch api rest-->
+            </div>
+            <div id="mobile-btn" class="mobile-btn">
+                <div id="hamburger" class="hamburger" onclick="abrirMenu()">
+                    <div class="_layer -top"></div>
+                    <div class="_layer -mid"></div>
+                    <div class="_layer -bottom"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="content-hero">
+            <h1>EXPLORE BEYOND HORIZON</h1>
+            <p>Magma mundi referrer quo, no rebum dignissism qui . <br> Per quedal acussted id, agam labores.
+            </p>
+            <div class="btn">
+                <button> <a href="#containerPortfolio">VIEW QUE WORK</a> </button>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-container" id="containerPortfolio">
+        <div class="containerGrid">
+            <div onclick="activarGrilla()" class="mosaicoStyle">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div onclick="activarLista()" class="listStyle">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <ul id="filtros">
+                <li class="filtro active" onclick="filtrarAll()">All</li>
+                <li class="filtro" onclick="filtrar('branding')">Branding</li>
+                <li class="filtro" onclick="filtrar('web')">Web</li>
+                <li class="filtro" onclick="filtrar('photography')">Photography</li>
+                <li class="filtro" onclick="filtrar('app')">App</li>
+            </ul>
+        </div>
+        <div id="portfolio">
+            <ul id="mitad1"></ul>
+            <ul id="mitad2"></ul>
+            <ul id="mitad3"></ul>
+            <!-- portfolio vía fetch api rest-->
+        </div>
+    </div>
+    <footer>
+        <p>© 2016 - <span>Sneak </span>All right Reserved</p>
+        <ul>
+            <li><i class="fab fa-facebook-f"></i></li>
+            <li><i class="fab fa-twitter"></i></li>
+            <li><i class="fab fa-dribbble"></i></li>
+            <li><i class="fab fa-google-plus-g"></i></li>
+            <li><i class="fab fa-youtube"></i></li>
+        </ul>
+    </footer>
+</body>
+
+<script src="./src/js/index.js"></script>
+<script>
+    var btns = document.querySelectorAll(".filtro");
+    Array.from(btns).forEach(item => {
+        item.addEventListener('click', () => {
+            console.log("oli", item)
+            var selected = document.getElementsByClassName("active");
+            selected[0].className = selected[0].className.replace(" active", "");
+            item.className += " active";
+        });
+    });
+</script>
+
+</html>

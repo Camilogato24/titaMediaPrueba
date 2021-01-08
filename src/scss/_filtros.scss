@@ -1,0 +1,67 @@
+@import 'variables';
+#filtros {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    justify-content: space-evenly;
+    padding: 30px;
+    li {
+        padding: 10px 25px;
+        cursor: pointer;
+        color: $oscuro;
+        font-weight: 500;
+        &.active {
+            background-color: $main-color;
+            color: $blanco;
+        }
+    }
+}
+
+.containerGrid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+    .mosaicoStyle {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 5px;
+        cursor: pointer;
+        div {
+            width: 8px;
+            height: 8px;
+            background: $main-color;
+            margin: 2px;
+        }
+    }
+    .listStyle {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 5px;
+        cursor: pointer;
+        div {
+            width: 20px;
+            height: 7px;
+            background: $main-color;
+            margin-bottom: 5px;
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #filtros {
+        flex-direction: column;
+        padding: 0;
+        margin: 40px;
+        width: calc(100% - 80px);
+    }
+    .containerGrid {
+        display: none;
+    }
+}
